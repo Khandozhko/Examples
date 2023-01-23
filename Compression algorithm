@@ -1,0 +1,21 @@
+class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        char[] array = input.toCharArray();
+        StringBuilder builder = new StringBuilder();
+        char prev = array[0];
+        int counter = 1;
+        for (int i = 1; i < array.length; i++) {
+            char current = array[i];
+            if (current == prev) {
+                counter++;
+            } else {
+                builder.append(prev).append(counter);
+                counter = 1;
+            }
+            prev = current;
+        }
+        System.out.println(builder.append(prev).append(counter));
+    }
+}
